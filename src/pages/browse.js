@@ -12,8 +12,6 @@ function Browse() {
 
     const slides = selectionMap({ series, films })
 
-
-
     return ( 
         <BrowseContainer slides={slides}/>
      );

@@ -17,8 +17,6 @@ function BrowseContainer( { slides } ) {
     const [profile, setProfile] = useState({})
     const [loading, setLoading] = useState(true)
 
-    // console.log(slides)
-
     const { firebase } = useContext(FirebaseContext)
     const user = firebase.auth().currentUser || {}
 

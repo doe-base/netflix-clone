@@ -1,26 +1,23 @@
 // Initialize Firebase      Initialize Firebase
-// Initialize Firebase      Initialize Firebase
-// Initialize Firebase      Initialize Firebase
-// Initialize Firebase      Initialize Firebase
-// Initialize Firebase      Initialize Firebase
-
 import Firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
+import { getFirestore } from 'firebase/firestore';
 //import { seedDatabase } from '../seed'; //(use seedDatabase just once after initial initialization)
 
 
 const config = {
-    apiKey: "AIzaSyCVPG7T1_LcmNRPbpQ76eEoaBdT7LzmkrM",
-    authDomain: "netflix-clone-30bd8.firebaseapp.com",
-    projectId: "netflix-clone-30bd8",
-    storageBucket: "netflix-clone-30bd8.appspot.com",
-    messagingSenderId: "202672653693",
-    appId: "1:202672653693:web:af732adbbd9c2ef2243814"
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGE_SENDER_ID,
+    appId: process.env.REACT_APP_FIREBASE_API_ID
 };
 
 const firebase = Firebase.initializeApp(config);
+const db = getFirestore(firebase);
 
 //seedDatabase(firebase)  //(use seedDatabase just once after initial initialization)
 
-export { firebase } 
+export { firebase, db } 

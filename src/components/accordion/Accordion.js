@@ -30,7 +30,7 @@ Accordion.Item = function AccordionItem({children, ...restProps}){
 
 Accordion.Header = function AccodionHeader({children, ...restProps}){
     const {toggle, setToggle} = useContext(ToggleContext)
-    return <Header {...restProps} onClick={()=>toggle(setToggle(prevToggle => !prevToggle))}>
+    return <Header {...restProps} onClick={()=>setToggle(prevToggle => !prevToggle)}>
         {children}
         {toggle ?( <img src="/images/icons/close-slim.png" />) : (<img src="/images/icons/add.png" />)}
     </Header>
