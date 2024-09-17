@@ -3,7 +3,6 @@ import { FirebaseContext } from "../context/firebase";
 
 export default function useContent(target){
     const [content, setContent] = useState([])
-    console.log(content)
 
     const { firebase } = useContext(FirebaseContext)
 
